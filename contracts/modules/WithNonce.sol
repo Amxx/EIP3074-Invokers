@@ -2,12 +2,12 @@
 
 pragma solidity ^0.8.0;
 
-import "../utils/Nonces.sol";
+import "../utils/ReplayProtection.sol";
 
 abstract contract WithNonce {
-    using Nonces for Nonces.MultiNonces;
+    using ReplayProtection for ReplayProtection.MultiNonces;
 
-    Nonces.MultiNonces private _nonces;
+    ReplayProtection.MultiNonces private _nonces;
 
     function nonce(address from) public view virtual returns (uint256) {
         return _nonces.getNonce(from);
@@ -18,6 +18,6 @@ abstract contract WithNonce {
     }
 
     function _verifyAndConsumeNonce(address owner, uint256 idx) internal virtual returns (bool) {
-        return _nonces._verifyAndConsumeNonce(owner, idx);
+        return _nonces.verifyAndConsumeNonce(owner, idx);
     }
 }
