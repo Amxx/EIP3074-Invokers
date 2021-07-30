@@ -13,6 +13,7 @@
     "url": "https://github.com/amxx/eip3074-invokers/issues"
   },
   "scripts": {
+    "flatten": "mkdir -p generated && hardhat flatten contracts/Invoker.sol > generated/flatten.sol",
     "compile": "hardhat compile",
     "test": "hardhat test"
   },

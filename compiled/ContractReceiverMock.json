@@ -1,0 +1,41 @@
+{
+  "abi": [
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "sender",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "value",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "bytes",
+          "name": "data",
+          "type": "bytes"
+        }
+      ],
+      "name": "Received",
+      "type": "event"
+    },
+    {
+      "stateMutability": "payable",
+      "type": "fallback"
+    },
+    {
+      "inputs": [],
+      "name": "fail",
+      "outputs": [],
+      "stateMutability": "payable",
+      "type": "function"
+    }
+  ],
+  "bytecode": "608060405234801561001057600080fd5b5061014c806100206000396000f3fe608060405260043610601c5760003560e01c8063a9cc471814605a575b7f89e8e1406eb88cbdf591b5eeb74b6d10cbda6e6ff4190b83ed226e54a1e6c4fb33346000366040516050949392919060ae565b60405180910390a1005b60606062565b005b60405162461bcd60e51b815260206004820152601760248201527f43616c6c52656365697665724d6f636b20726576657274000000000000000000604482015260640160405180910390fd5b6001600160a01b0385168152602081018490526060604082018190528101829052600082846080840137818301608090810191909152601f909201601f19160101939250505056fea264697066735822122076c58c0a9aee8ba215afc21c20006bf8bace841326351a99d2a9584f781d370864736f6c637822302e382e322d63692e323032312e332e33312b636f6d6d69742e65653635346363330053"
+}

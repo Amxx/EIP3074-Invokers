@@ -4,9 +4,9 @@ pragma solidity ^0.8.0;
 
 import "@openzeppelin/contracts/utils/Address.sol";
 import "../utils/EIP3074.sol";
-import "../utils/Nonced.sol";
+import "./WithNonce.sol";
 
-contract RelayInvoker is Nonced {
+contract RelayInvoker is WithNonce {
     function relay(
         address[] calldata targets,
         uint256[] calldata values,
@@ -19,7 +19,7 @@ contract RelayInvoker is Nonced {
         address signer = EIP3074.auth(keccak256(abi.encode(targets, values, calldatas, deadline, nonce)), authsig);
 
         require(block.timestamp <= deadline, "Deadline reached");
-        require(_verifyNonce(signer, nonce), "Invalid nonce");
+        require(_verifyAndConsumeNonce(signer, nonce), "Invalid nonce");
 
         uint256 left = msg.value;
         for (uint256 i = 0; i < targets.length; ++i) {

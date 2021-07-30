@@ -1,0 +1,62 @@
+Arguments: 
+  /home/amxx/.nvm/versions/node/v14.15.3/bin/node /home/amxx/.nvm/versions/node/v14.15.3/bin/yarn flatten
+
+PATH: 
+  /home/amxx/Code/cloned-repo/bin:/home/amxx/.nvm/versions/node/v14.15.3/bin:/home/amxx/Code/Scripts:/usr/local/bin:/home/amxx/.cargo/bin:/usr/local/bin:/usr/bin:/usr/local/sbin:/var/lib/flatpak/exports/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl
+
+Yarn version: 
+  1.22.10
+
+Node version: 
+  14.15.3
+
+Platform: 
+  linux x64
+
+Trace: 
+  SyntaxError: /home/amxx/Work/Projects/EIP3074-Invokers/package.json: Unexpected string in JSON at position 498
+      at JSON.parse (<anonymous>)
+      at /home/amxx/.nvm/versions/node/v14.15.3/lib/node_modules/yarn/lib/cli.js:1625:59
+      at Generator.next (<anonymous>)
+      at step (/home/amxx/.nvm/versions/node/v14.15.3/lib/node_modules/yarn/lib/cli.js:310:30)
+      at /home/amxx/.nvm/versions/node/v14.15.3/lib/node_modules/yarn/lib/cli.js:321:13
+
+npm manifest: 
+  {
+    "name": "eip3074-invokers",
+    "version": "1.0.0",
+    "description": "Invokers for EIP3074",
+    "author": "Hadrien Croubois (@Amxx)",
+    "license": "MIT",
+  	"homepage": "https://github.com/amxx/eip3074-invokers#readme",
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/amxx/eip3074-invokers.git"
+    },
+    "bugs": {
+      "url": "https://github.com/amxx/eip3074-invokers/issues"
+    },
+    "scripts": {
+      "flatten": "hardhat flatten contracts/Invoker.sol > generate/flatten.sol"
+      "compile": "hardhat compile",
+      "test": "hardhat test"
+    },
+    "dependencies": {
+      "@openzeppelin/contracts": "^4.2.0"
+    },
+    "devDependencies": {
+      "@nomiclabs/hardhat-ethers": "^2.0.2",
+      "@nomiclabs/hardhat-waffle": "^2.0.1",
+      "chai": "^4.3.4",
+      "dotenv": "^10.0.0",
+      "ethers": "^5.4.1",
+      "hardhat": "^2.5.0",
+      "waffle": "^0.0.4"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
